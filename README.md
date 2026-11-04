@@ -178,7 +178,7 @@ Remove `headers` to use it without a key. Other MCP clients that support Streama
 
 ## Wafermap
 
-The token check is also on the [Wafermap](https://wafermap.xyz) marketplace as `hoodrugcheck-token-check`, where agents pay per call instead of using an API key.
+The token check is also on the Wafermap marketplace as [HoodRugCheck Token Check](https://wafermap.xyz/v1/m/hoodrugcheck), where agents pay per call instead of using an API key.
 
 ## License
 
