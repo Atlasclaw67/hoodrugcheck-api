@@ -34,12 +34,12 @@ export HOODRUGCHECK_API_KEY="your-key-here"
 
 ## Quick start
 
-`GET /api/v1/check/{address}` takes a token contract address on Robinhood Chain. These examples use WETH on Robinhood Chain as a known address, not as a recommendation.
+`GET /api/v1/check/{address}` takes a token contract address on Robinhood Chain. In these examples, replace `0xYOUR_TOKEN_ADDRESS` with the address you want to check: `0x` followed by 40 hex characters.
 
 ### curl
 
 ```bash
-curl https://hoodrugcheck.com/api/v1/check/0x0bd7d308f8e1639fab988df18a8011f41eacad73 \
+curl https://hoodrugcheck.com/api/v1/check/0xYOUR_TOKEN_ADDRESS \
   -H "Authorization: Bearer $HOODRUGCHECK_API_KEY"
 ```
 
@@ -48,7 +48,7 @@ Leave out the `-H` line to call it without a key.
 ### JavaScript
 
 ```js
-const address = '0x0bd7d308f8e1639fab988df18a8011f41eacad73';
+const address = '0xYOUR_TOKEN_ADDRESS';
 const apiKey = process.env.HOODRUGCHECK_API_KEY;
 
 const res = await fetch(`https://hoodrugcheck.com/api/v1/check/${address}`, {
@@ -63,7 +63,7 @@ console.log(res.status, result.score, result.status, result.verdict);
 ```python
 import json, os, urllib.request
 
-address = "0x0bd7d308f8e1639fab988df18a8011f41eacad73"
+address = "0xYOUR_TOKEN_ADDRESS"
 headers = {"User-Agent": "hoodrugcheck-api-examples"}
 if os.environ.get("HOODRUGCHECK_API_KEY"):
     headers["Authorization"] = f"Bearer {os.environ['HOODRUGCHECK_API_KEY']}"
@@ -81,15 +81,15 @@ with urllib.request.urlopen(request) as response:
 The scripts in [examples/](examples) also wait and retry on `202` and report errors:
 
 ```bash
-./examples/check.sh 0x0bd7d308f8e1639fab988df18a8011f41eacad73
+./examples/check.sh 0xYOUR_TOKEN_ADDRESS
 ```
 
 ```bash
-node examples/check.mjs 0x0bd7d308f8e1639fab988df18a8011f41eacad73
+node examples/check.mjs 0xYOUR_TOKEN_ADDRESS
 ```
 
 ```bash
-python3 examples/check.py 0x0bd7d308f8e1639fab988df18a8011f41eacad73
+python3 examples/check.py 0xYOUR_TOKEN_ADDRESS
 ```
 
 ## Reading the response
