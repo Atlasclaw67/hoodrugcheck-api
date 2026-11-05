@@ -180,6 +180,20 @@ Remove `headers` to use it without a key. Other MCP clients that support Streama
 
 The token check is also on the Wafermap marketplace as [HoodRugCheck Token Check](https://wafermap.xyz/v1/m/hoodrugcheck), where agents pay per call instead of using an API key.
 
+## x402 (pay per call)
+
+Agents can also pay per call with no API key. `POST https://hoodrugcheck.com/api/v1/x402/check` is a native x402 v2 endpoint at **$0.02 per call**, paid in USDC on Base or USDG on Robinhood Chain.
+
+```bash
+curl -i -X POST https://hoodrugcheck.com/api/v1/x402/check \
+  -H 'content-type: application/json' \
+  -d '{"address":"0xYOUR_TOKEN_ADDRESS"}'
+```
+
+Without a payment it answers `402` with the offers in the body and the `PAYMENT-REQUIRED` header. An x402 v2 client signs one and resends the call. You get the same 8 checks as the API, with full evidence.
+
+A call is settled only after a complete result. A scan still running (`503` + `Retry-After: 30`), a failed scan or an incomplete scan (`score: null`) is not charged. Manifest: https://hoodrugcheck.com/.well-known/x402
+
 ## License
 
 [MIT](LICENSE). This covers the docs and examples in this repo.
