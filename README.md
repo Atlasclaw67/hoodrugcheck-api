@@ -180,6 +180,18 @@ Remove `headers` to use it without a key. Other MCP clients that support Streama
 
 The token check is also on the Wafermap marketplace as [HoodRugCheck Token Check](https://wafermap.xyz/v1/m/hoodrugcheck), where agents pay per call instead of using an API key.
 
+## Snapshot links
+
+A snapshot is a permanent, frozen copy of one scan, with its own link preview. To make one, send the token address and the `scanned_at` value from a check:
+
+```bash
+curl -X POST https://hoodrugcheck.com/api/snapshots \
+  -H 'content-type: application/json' \
+  -d '{"address":"0xYOUR_TOKEN_ADDRESS","scannedAt":"2026-01-01T00:00:00.000Z"}'
+```
+
+You get back a link like `https://hoodrugcheck.com/s/aB3dE6gH`. It never starts a scan, and it answers `409` once a newer scan has replaced that result. The same token and result within 10 minutes returns the existing link. The page shows when the scan ran, the scanner version and the block, and links to the live score. Evidence is gated the same way as on a live report.
+
 ## x402 (pay per call)
 
 Agents can also pay per call with no API key. `POST https://hoodrugcheck.com/api/v1/x402/check` is a native x402 v2 endpoint at **$0.02 per call**, paid in USDC on Base or USDG on Robinhood Chain.

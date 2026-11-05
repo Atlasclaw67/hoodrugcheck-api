@@ -2,6 +2,11 @@
 
 Releases of this companion repo. The API itself is versioned separately: see `info.version` in [openapi.json](openapi.json).
 
+## v0.3.0 (2026-11-05)
+
+- `openapi.json` copied from https://hoodrugcheck.com/openapi.json (API version 1.2.0): adds `POST /api/snapshots`.
+- README: snapshot links, frozen copies of one scan result at `/s/{id}`.
+
 ## v0.2.2 (2026-11-05)
 
 - `openapi.json` copied from https://hoodrugcheck.com/openapi.json (API version 1.1.1): `GET /api/v1/x402/check` answers the same 402 as an unpaid POST, for probes. It sells nothing; pay with POST.
