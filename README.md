@@ -192,6 +192,8 @@ curl -i -X POST https://hoodrugcheck.com/api/v1/x402/check \
 
 Without a payment it answers `402` with the offers in the body and the `PAYMENT-REQUIRED` header. An x402 v2 client signs one and resends the call. You get the same 8 checks as the API, with full evidence.
 
+`GET` on the same URL answers the same 402, for probes. It sells nothing; pay with POST.
+
 A call is settled only after a complete result. A scan still running (`503` + `Retry-After: 30`), a failed scan or an incomplete scan (`score: null`) is not charged. Manifest: https://hoodrugcheck.com/.well-known/x402
 
 ## License
