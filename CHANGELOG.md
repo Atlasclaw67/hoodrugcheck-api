@@ -2,6 +2,10 @@
 
 Releases of this companion repo. The API itself is versioned separately: see `info.version` in [openapi.json](openapi.json).
 
+## v0.2.1 (2026-11-05)
+
+- Site: /radar now has a "scanner v4, frozen record" box. No API change; `openapi.json` is unchanged (API version 1.1.0).
+
 ## v0.2.0 (2026-11-05)
 
 - `openapi.json` copied from https://hoodrugcheck.com/openapi.json (API version 1.1.0): adds `POST /api/v1/x402/check`.
