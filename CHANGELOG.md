@@ -2,6 +2,12 @@
 
 Releases of this companion repo. The API itself is versioned separately: see `info.version` in [openapi.json](openapi.json).
 
+## v0.3.2 (2026-11-06)
+
+- `openapi.json` copied from https://hoodrugcheck.com/openapi.json (API version 1.3.1).
+- Scanner v6 and detector v6: a sell simulation that hits a transport failure (timeout, connection error, 5xx, rate limit, an RPC error that isn't an execution revert) now reads as unknown, not as blocked. Any execution revert the node reports is still a blocked sell. `scanner_version` in paid responses is now 6.
+- Site: /radar lists Called It cards again, and scanner v5 has its own frozen record next to v4's.
+
 ## v0.3.1 (2026-11-06)
 
 - `openapi.json` copied from https://hoodrugcheck.com/openapi.json (API version 1.3.0): every check response has a `degraded` boolean, true when 3 or more of the 8 checks couldn't run because a read failed. `POST /api/v1/x402/check`, the Wafermap route and `POST /api/snapshots` answer 503 with `Retry-After` for a degraded scan, and nothing is charged.
