@@ -2,6 +2,10 @@
 
 Releases of this companion repo. The API itself is versioned separately: see `info.version` in [openapi.json](openapi.json).
 
+## v0.3.1 (2026-11-06)
+
+- `openapi.json` copied from https://hoodrugcheck.com/openapi.json (API version 1.3.0): every check response has a `degraded` boolean, true when 3 or more of the 8 checks couldn't run because a read failed. `POST /api/v1/x402/check`, the Wafermap route and `POST /api/snapshots` answer 503 with `Retry-After` for a degraded scan, and nothing is charged.
+
 ## v0.3.0 (2026-11-05)
 
 - `openapi.json` copied from https://hoodrugcheck.com/openapi.json (API version 1.2.0): adds `POST /api/snapshots`.
