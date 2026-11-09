@@ -2,6 +2,12 @@
 
 Releases of this companion repo. The API itself is versioned separately: see `info.version` in [openapi.json](openapi.json).
 
+## v0.3.3 (2026-11-09)
+
+- `openapi.json` copied from https://hoodrugcheck.com/openapi.json; unchanged (API version 1.3.1). No schema change: the fields are the same, the trading hook check's results and headlines are what changed.
+- Scanner v7. The trading hook check scores a registered hook's fee: a fee locked per pool (Pons graduations) is scored at the pool's actual fee, an adjustable fee at the most it can be raised to. 5% or less earns full points, over 5% to 10% is a caution with partial points, over 10% a caution with a heavy deduction. An adjustable fee with no cap fails, and a fee that can't be read is unknown with no points. The check's headline names the case, e.g. "Fee locked at 3% per trade" or "Adjustable fee, max 20% per trade". `scanner_version` in paid responses is now 7.
+- Site: report pages carry the real score in the server HTML (no more "0/100" without JavaScript), and the share buttons work in mobile and in-app browsers. /radar keeps scanner v6's record as its own frozen box.
+
 ## v0.3.2 (2026-11-06)
 
 - `openapi.json` copied from https://hoodrugcheck.com/openapi.json (API version 1.3.1).
