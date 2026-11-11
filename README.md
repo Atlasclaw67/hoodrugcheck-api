@@ -1,5 +1,9 @@
 # HoodRugCheck API
 
+Docs: https://hoodrugcheck.com/docs  
+OpenAPI: https://hoodrugcheck.com/openapi.json  
+Changelog: [CHANGELOG.md](CHANGELOG.md)
+
 Public API docs, examples and MCP setup for [HoodRugCheck](https://hoodrugcheck.com), the token safety scanner for **Robinhood Chain** (EVM, chain ID 4663).
 
 Give it a Robinhood Chain token address and it runs 8 on-chain checks against live chain state: mint authority, admin control, liquidity, holder concentration, sellability, contract verification, token age and trading hooks. You get back a score, a tradeability status and the result of each check. It's built for AI agents and apps that need a go/no-go signal before trading or recommending a token.

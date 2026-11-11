@@ -2,6 +2,11 @@
 
 Releases of this companion repo. The API itself is versioned separately: see `info.version` in [openapi.json](openapi.json).
 
+## v0.3.4 (2026-11-11)
+
+- README: "Docs" and "OpenAPI" links, plus a link to this changelog, at the top.
+- Site: every hoodrugcheck.com page now links "API docs" (/docs) and "OpenAPI spec" (/openapi.json) in its footer and carries `<link rel="service-desc" type="application/json" href="/openapi.json">` and `<link rel="help" href="/docs">` in its `<head>`. No API change; `openapi.json` is unchanged (API version 1.3.1).
+
 ## v0.3.3 (2026-11-09)
 
 - `openapi.json` copied from https://hoodrugcheck.com/openapi.json; unchanged (API version 1.3.1). No schema change: the fields are the same, the trading hook check's results and headlines are what changed.
