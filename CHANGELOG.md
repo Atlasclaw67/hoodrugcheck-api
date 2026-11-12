@@ -2,6 +2,12 @@
 
 Releases of this companion repo. The API itself is versioned separately: see `info.version` in [openapi.json](openapi.json).
 
+## v0.3.6 (2026-11-12)
+
+- Site: free-scan limits are fairer on shared connections. A visitor's daily free scans are now counted per browser first, so a phone on a shared mobile or home connection is no longer blocked by other people's scans. A separate daily ceiling per connection still stops abuse.
+- Site: a token report scanned in the last 10 minutes is free for anyone to open. It shows "Scanned N min ago" with a Rescan button. The limit message is plainer: "This connection has used today's free new scans. Reports already scanned stay free. Log in for 3 a day."
+- No API change; `openapi.json` is unchanged (API version 1.3.1). Scores and checks are unchanged.
+
 ## v0.3.5 (2026-11-12)
 
 - Site: every token report page on hoodrugcheck.com now has a separate "Team check (via HEY)" box beside the safety score. It comes from HEY Research Lab (https://heyresearch.xyz) and shows who builds the token and whether they ship: HEY's status, verified builder yes/no, whether the project names this contract, the last ship, and a link to the HEY page. A token HEY has no record of shows HEY's own wording. It is not part of the safety score and never changes it. If HEY is unavailable the box is hidden.
