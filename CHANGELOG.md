@@ -2,6 +2,11 @@
 
 Releases of this companion repo. The API itself is versioned separately: see `info.version` in [openapi.json](openapi.json).
 
+## v0.3.5 (2026-11-12)
+
+- Site: every token report page on hoodrugcheck.com now has a separate "Team check (via HEY)" box beside the safety score. It comes from HEY Research Lab (https://heyresearch.xyz) and shows who builds the token and whether they ship: HEY's status, verified builder yes/no, whether the project names this contract, the last ship, and a link to the HEY page. A token HEY has no record of shows HEY's own wording. It is not part of the safety score and never changes it. If HEY is unavailable the box is hidden.
+- Website token pages only. The API, the x402 endpoint and snapshot pages are unchanged; `openapi.json` is copied from https://hoodrugcheck.com/openapi.json and unchanged (API version 1.3.1).
+
 ## v0.3.4 (2026-11-11)
 
 - README: "Docs" and "OpenAPI" links, plus a link to this changelog, at the top.
