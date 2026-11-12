@@ -2,6 +2,12 @@
 
 Releases of this companion repo. The API itself is versioned separately: see `info.version` in [openapi.json](openapi.json).
 
+## v0.3.7 (2026-11-12)
+
+- Site: the limit message now says "Reports scanned in the last few minutes stay free", which matches the 10-minute window.
+- Site: the per-browser id used for the free-scan limit is set only when a web page is loaded, not on files such as /openapi.json.
+- No API change; `openapi.json` is unchanged (API version 1.3.1). Scores and checks are unchanged.
+
 ## v0.3.6 (2026-11-12)
 
 - Site: free-scan limits are fairer on shared connections. A visitor's daily free scans are now counted per browser first, so a phone on a shared mobile or home connection is no longer blocked by other people's scans. A separate daily ceiling per connection still stops abuse.
