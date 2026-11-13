@@ -2,6 +2,11 @@
 
 Releases of this companion repo. The API itself is versioned separately: see `info.version` in [openapi.json](openapi.json).
 
+## v0.3.8 (2026-11-13)
+
+- Site: Team check now shows HEY momentum, 30-day ships and weekly streak. The "Team check (via HEY)" box on token reports shows HEY's project status, Build Momentum, counted ships in the last 30 days and the weekly shipping streak, read from HEY's per-project data. A token HEY has no record of shows "Not tracked by HEY yet". A value HEY doesn't report shows "Not reported", never 0. It is not part of the safety score.
+- No API change; `openapi.json` is unchanged (API version 1.3.1). Scores and checks are unchanged.
+
 ## v0.3.7 (2026-11-12)
 
 - Site: the limit message now says "Reports scanned in the last few minutes stay free", which matches the 10-minute window.
